@@ -34,3 +34,7 @@ lib/generated_plugin_registrant.dart
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+#To reduce the burden of tracking images folder from the start which may increase the size of git tracking, i have opted to uuntracked them till finish this 
+#when making a final git commit , i'll add the images folder 
+/assets/images/
