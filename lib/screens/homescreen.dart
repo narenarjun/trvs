@@ -1,3 +1,4 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -84,34 +85,37 @@ class _HomeScreenState extends State<HomeScreen> {
             HotelCarousel()
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentTab,
-          onTap: (int value) {
+        bottomNavigationBar: BottomNavyBar(
+          selectedIndex: _currentTab,
+          onItemSelected: (int value) {
             setState(() {
               _currentTab = value;
             });
           },
           items: [
-            BottomNavigationBarItem(
+            BottomNavyBarItem(
               icon: Icon(
                 Icons.search,
                 size: 30.0,
               ),
-              title: SizedBox.shrink(),
+              title: Text(''),
+              inactiveColor: Colors.grey,
+              activeColor: Colors.redAccent,
             ),
-            BottomNavigationBarItem(
+            BottomNavyBarItem(
               icon: Icon(
                 Icons.local_pizza,
                 size: 30.0,
               ),
-              title: SizedBox.shrink(),
+              title: Text(''),
+              inactiveColor: Colors.grey,
+              activeColor: Colors.yellow[800],
             ),
-            BottomNavigationBarItem(
-              icon: CircleAvatar(
-                radius: 15.0,
-                backgroundImage: AssetImage('assets/images/steph.jpg'),
-              ),
-              title: SizedBox.shrink(),
+            BottomNavyBarItem(
+              icon: Icon(Icons.account_circle),
+              title: Text(''),
+              inactiveColor: Colors.grey,
+              activeColor: Colors.amberAccent,
             ),
           ],
         ),
@@ -119,3 +123,35 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+// BottomNavigationBar(
+//   currentIndex: _currentTab,
+//   onTap: (int value) {
+//     setState(() {
+//       _currentTab = value;
+//     });
+//   },
+//   items: [
+//     BottomNavigationBarItem(
+//       icon: Icon(
+//         Icons.search,
+//         size: 30.0,
+//       ),
+//       title: SizedBox.shrink(),
+//     ),
+//     BottomNavigationBarItem(
+//       icon: Icon(
+//         Icons.local_pizza,
+//         size: 30.0,
+//       ),
+//       title: SizedBox.shrink(),
+//     ),
+//     BottomNavigationBarItem(
+//       icon: CircleAvatar(
+//         radius: 15.0,
+//         backgroundImage: AssetImage('assets/images/steph.jpg'),
+//       ),
+//       title: SizedBox.shrink(),
+//     ),
+//   ],
+// ),
